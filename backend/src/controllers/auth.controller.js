@@ -28,6 +28,13 @@ async function registerUser(req, res) {
     phone,
   });
 
+  const token = jwt.sign(
+    {
+      id: user._id,
+    },
+    process.env.JWT_SECRETE_KEY
+  );
+  res.cookie("token", token);
   res.status(201).json({
     message: "User registered sucessfully",
     user: {

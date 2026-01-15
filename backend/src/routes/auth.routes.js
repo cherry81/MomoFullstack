@@ -9,6 +9,6 @@ const authrouter = express.Router();
 
 authrouter.post("/user/register", registerUser);
 authrouter.post("/user/login", loginUser);
-authrouter.post("/user/logout", logoutUser);
+authrouter.get("/user/logout", logoutUser);
 
 module.exports = authrouter;
